@@ -53,6 +53,7 @@ class AuthServices {
     if(!user){
         throw ApiError.BadRequest('The user is not found');
     }
+
     const isPassEquals = await bcrypt.compare(password, user.password);
     if(!isPassEquals){
         throw ApiError.BadRequest('Wrong password');
@@ -70,6 +71,7 @@ class AuthServices {
     if(!user){
         throw ApiError.BadRequest('The wallet is not found');
     }
+    
     const isPassEquals = await bcrypt.compare(password, user.password);
     if(!isPassEquals){
         throw ApiError.BadRequest('Wrong password');

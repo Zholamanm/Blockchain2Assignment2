@@ -38,6 +38,7 @@ class AuthControllers {
       const userData = await AuthServices.login(email, password);
       res.cookie('refreshToken', userData.refreshToken, {maxAge: 30*24*60*60*1000, httpOnly: true});
       return res.json(userData);
+
     } catch(error) {
       next(error);
     }
@@ -49,6 +50,7 @@ class AuthControllers {
       const userData = await AuthServices.loginWithMetaMask(wallet_address, password);
       res.cookie('refreshToken', userData.refreshToken, {maxAge: 30*24*60*60*1000, httpOnly: true});
       return res.json(userData);
+      
     } catch(error) {
       next(error);
     }
