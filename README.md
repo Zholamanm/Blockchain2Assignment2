@@ -14,7 +14,7 @@ The goal of the project is to create a more fair and transparent social network 
 
 ## Technologies
 
-* **Web3.js:** JavaScript library for interacting with the Ethereum blockchain
+* **Web3.js:** JavaScript library for interacting with the blockchain
 
 ## Screenshots
 ![image](https://github.com/Zholamanm/Blockchain2Assignment2/assets/146696774/ce4272ad-3298-4774-9992-0a6978c6cf40)
