@@ -5,11 +5,12 @@ const cookieParser = require('cookie-parser');
 
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
+const postRoutes = require("./routes/postRoutes");
 
 const app = express();
 
 const PORT = process.env.PORT || 8080;
-const DB_URL = "mongodb+srv://zholaman223:SeqevtFE4u9dotdv@cluster0.rgbcvam.mongodb.net/?retryWrites=true&w=majority";
+const DB_URL = "mongodb+srv://yernar:thyfh123@cluster0.uey4bw8.mongodb.net/";
 
 app.use(cors({
   credentials: true
@@ -21,6 +22,7 @@ const BASE_URL = "/api/v1";
 
 app.use(`${BASE_URL}/auth`, authRoutes);
 app.use(`${BASE_URL}/user`, userRoutes);
+app.use(`${BASE_URL}/post`, postRoutes);
 
 const start = async () => {
   try {
