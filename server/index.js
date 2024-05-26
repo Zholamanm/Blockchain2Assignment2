@@ -10,7 +10,7 @@ const postRoutes = require("./routes/postRoutes");
 const app = express();
 
 const PORT = process.env.PORT || 8080;
-const DB_URL = "mongodb+srv://yernar:thyfh123@cluster0.uey4bw8.mongodb.net/";
+const DB_URL = "mongodb+srv://zholaman223:SeqevtFE4u9dotdv@cluster0.rgbcvam.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 app.use(cors({
   credentials: true

@@ -1,12 +1,11 @@
 const bcrypt = require("bcryptjs");
-
 const User = require("../models/User");
 
 class UserServices {
   async getUserById(userId) {
-    const user = await UserModel.findOne({ _id: userId });
+    const user = await User.findOne({ _id: userId });
     if (!user) {
-        throw ApiError.BadRequest('User not found');
+      throw new Error('User not found');
     }
     return user;
   }
@@ -19,19 +18,15 @@ class UserServices {
     if (firstname) updateFields.firstname = firstname;
     if (lastname) updateFields.lastname = lastname;
     if (wallet_address) updateFields.wallet_address = wallet_address;
-    if (password !== 'null') updateFields.password = await bcrypt.hash(password, 3);
 
-    const user = await User.findOneAndUpdate(
-        { _id: userID },
-        updateFields
-    );
+    const user = await User.findOneAndUpdate({ _id: userID }, updateFields, { new: true });
 
     if (!user) {
-        throw ApiError.BadRequest('User not found');
+      throw new Error('User not found');
     }
 
     return user;
-}
+  }
 }
 
 module.exports = new UserServices();

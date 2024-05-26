@@ -18,8 +18,7 @@ class UserControllers {
   
 
   async updateProfile(req, res, next) {
-    const userID = req.params.id;
-    const { username, bio, email, firstname, lastname, password, wallet_address } = req.body;
+    const { userID, username, bio, email, firstname, lastname, password, wallet_address } = req.body;
 
     try {
       const user = await UserServices.updateUser( userID, username, bio, email, firstname, lastname, password, wallet_address);
